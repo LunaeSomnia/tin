@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 vizia = {git = "https://github.com/vizia/vizia", branch="main"}
+tinyfiledialogs = "3.0"
