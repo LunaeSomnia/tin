@@ -1,0 +1,165 @@
+* {
+    /* border-width: 1px;
+    border-color: blue; */
+    font-size: 14px;
+    font: "Bergen Mono Regular";
+    outer-shadow: 0 0 0 transparent;
+}
+
+button {
+    background-color: transparent;
+    outer-shadow: 0 0 0 transparent;
+}
+
+button:hover {
+    background-color: transparent;
+    outer-shadow: 0 0 0transparent;
+}
+
+scrollbar>.thumb {
+    border-radius: 0px;
+    background-color: #3f3f3f;
+}
+
+scrollview>.scroll_content {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position-type: self-directed;
+}
+
+scrollview>scrollbar.horizontal {
+    left: 0px;
+    width: 1s;
+    right: 14px;
+
+    top: 1s;
+    height: 14px;
+    bottom: 0px;
+}
+
+scrollview>scrollbar.vertical {
+    top: 0px;
+    height: 1s;
+    bottom: 0px;
+
+    left: 1s;
+    width: 8px;
+    right: 0px;
+}
+
+
+.wrapper {
+    col-between: 1px;
+    row-between: 1px;
+    border-width: 1px;
+}
+
+/* File Header */
+
+.files-header {
+    height: 50px;
+}
+
+.file-header {
+    width: auto;
+    border-width: 0px;
+    border-radius: 0px;
+    border-color: transparent;
+    child-right: 0px;
+    child-left: 0px;
+    child-top: 0px;
+    child-bottom: 0px;
+    row-between: 1s;
+}
+
+.file-header-colored {
+    height: 1px;
+    width: 1s;
+}
+
+.file-name {
+    left: 8px;
+    right: 8px;
+    height: 1s;
+}
+
+/* File */
+
+.file {
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    width: 1s;
+    height: 1s;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.file-data {
+    top: 4px;
+    left: 8px;
+    color: #fff;
+    height: auto;
+}
+
+/* Window Menu */
+
+.window-menu {
+    height: 16px;
+}
+
+.window-menu .title-wrapper .title {
+    height: 16px;
+
+}
+
+
+.window-menu-button {
+    border-radius: 0px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: transparent;
+    background-color: transparent;
+    width: 1s;
+    child-left: 16px;
+    height: auto;
+}
+
+.window-menu-button:hover {
+    background-color: #242424;
+    border-color: #3f3f3f;
+}
+
+.window-menu-button .window-menu-button-label {
+    color: #888;
+}
+
+.window-menu-button:hover .window-menu-button-label {
+    color: #fff;
+}
+
+/* Window Dropdown */
+
+.window-dropdown {
+    width: auto;
+
+}
+
+.window-dropdown-popup {
+    border-radius: 4px;
+    width: 150px;
+    child-left: 8px;
+    child-right: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    child-top: 8px;
+    child-bottom: 8px;
+    border-width: 1px;
+}
+
+.title-wrapper {
+    child-left: 8px;
+    child-right: 8px;
+}

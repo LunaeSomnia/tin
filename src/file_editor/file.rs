@@ -13,4 +13,14 @@ impl File {
         let data = read_to_string(&path)?;
         Ok(Self { path, data })
     }
+
+    pub fn name(&self) -> String {
+        self.path
+            .as_path()
+            .file_name()
+            .unwrap()
+            .to_str()
+            .unwrap()
+            .to_owned()
+    }
 }
