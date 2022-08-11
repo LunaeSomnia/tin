@@ -47,8 +47,11 @@ fn main() {
                             // files-header
                             HStack::new(cx, |cx| {
                                 FileHeader::new(cx, file);
+                                HStack::new(cx, |_| {})
+                                    .class("files-header-fill")
+                                    .background_color(BG_1);
                             })
-                            .background_color(BG_1)
+                            .background_color(BG_3)
                             .class("files-header");
 
                             // file

@@ -1,6 +1,6 @@
 use vizia::prelude::*;
 
-use crate::{ACCENT, BG_0, BG_1, BG_2, BG_5, BG_6};
+use crate::{ACCENT, BG_0, BG_1, BG_2, BG_3, BG_5, BG_6};
 
 use super::file::File;
 
@@ -53,7 +53,9 @@ impl FileHeader {
                     if is_open {
                         color_strip
                     } else {
-                        color_strip.background_color(Color::rgba(0, 0, 0, 0))
+                        color_strip
+                            .background_color(Color::rgba(0, 0, 0, 0))
+                            .background_color(BG_3)
                     }
                 },
             )

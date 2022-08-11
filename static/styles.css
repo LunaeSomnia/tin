@@ -17,12 +17,13 @@ button:hover {
 }
 
 scrollbar>.thumb {
+    width: 12px;
     border-radius: 0px;
     background-color: #3f3f3f;
 }
 
-scrollbar.vertical {
-    width: 2px;
+scrollview>scrollbar.vertical {
+    width: 12px;
     child-left: 0px;
     child-right: 0px;
     border-radius: 0px;
@@ -39,7 +40,14 @@ scrollbar.vertical {
 /* File Header */
 
 .files-header {
+    col-between: 1px;
     height: 22px;
+}
+
+.files-header-fill {
+    width: 1s;
+    height: 21px;
+    bottom: 1px;
 }
 
 .file-header {
