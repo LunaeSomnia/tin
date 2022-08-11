@@ -1,6 +1,10 @@
 use vizia::prelude::*;
 
-use crate::{ACCENT, BG_0, BG_1, BG_2, BG_3, BG_5, BG_6};
+use crate::{
+    app::AppEvent,
+    svg::{svg_icon::SvgIcon, Svg},
+    ACCENT, BG_0, BG_1, BG_2, BG_3, BG_5, BG_6,
+};
 
 use super::file::File;
 
@@ -37,13 +41,28 @@ impl FileHeader {
                 cx,
                 |ex| ex.emit(FileHeaderEvent::Toggle),
                 |cx| {
-                    let label = Label::new(cx, &file.name())
-                        .class("file-name")
-                        .color(BG_5)
+                    HStack::new(cx, |cx| {
+                        let label = Label::new(cx, &file.name())
+                            .class("file-name")
+                            .color(BG_5)
+                            .cursor(cursor);
+                        if is_open {
+                            label.color(BG_6);
+                        }
+                        Button::new(
+                            cx,
+                            |ex| ex.emit(AppEvent::CloseFile),
+                            |cx| {
+                                Svg::new(cx, SvgIcon::X)
+                                    .size(Units::Pixels(18.0))
+                                    .cursor(cursor)
+                            },
+                        )
+                        .class("svg-wrapper")
                         .cursor(cursor);
-                    if is_open {
-                        label.color(BG_6);
-                    }
+                    })
+                    .cursor(cursor)
+                    .class("file-header-content");
 
                     let color_strip = HStack::new(cx, |_| {})
                         .class("file-header-colored")
@@ -61,7 +80,6 @@ impl FileHeader {
             )
             .background_color(BG_1)
             .class("file-header")
-            // .display(Display::Flex)
             .layout_type(LayoutType::Column)
             .cursor(cursor);
 

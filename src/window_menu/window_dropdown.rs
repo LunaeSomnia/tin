@@ -5,7 +5,7 @@ use vizia::{
     prelude::*,
 };
 
-use crate::{BG_0, BG_1, BG_2, BG_5, BG_6};
+use crate::{BG_0, BG_1, BG_2, BG_3, BG_5, BG_6};
 
 pub struct WindowDropdown;
 
@@ -40,8 +40,8 @@ impl WindowDropdown {
                 .on_blur(|cx| cx.emit(PopupEvent::Close))
                 .top(Percentage(100.0))
                 .height(Auto)
-                .border_color(BG_2)
-                .background_color(BG_1)
+                .border_color(BG_3)
+                .background_color(BG_2)
                 .class("window-dropdown-popup");
             })
             .class("window-dropdown")

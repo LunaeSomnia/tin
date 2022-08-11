@@ -40,7 +40,8 @@ impl View for Svg {
     fn draw(&self, cx: &mut DrawContext<'_>, canvas: &mut Canvas) {
         let bounds = cx.bounds();
 
-        let color = cx.font_color().unwrap();
+        let default = Color::black();
+        let color = cx.font_color().unwrap_or(&default);
 
         canvas.save();
         canvas.reset();

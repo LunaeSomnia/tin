@@ -17,6 +17,7 @@ pub struct AppState {
 pub enum AppEvent {
     NewFile,
     OpenFile,
+    CloseFile,
 }
 
 impl Default for AppState {
@@ -42,6 +43,7 @@ impl Model for AppState {
                     self.file = Some(file);
                 }
             }
+            AppEvent::CloseFile => self.file = None,
         })
     }
 }

@@ -16,6 +16,10 @@ button:hover {
     outer-shadow: 0 0 0transparent;
 }
 
+svg {
+    background-color: transparent;
+}
+
 scrollbar>.thumb {
     width: 12px;
     border-radius: 0px;
@@ -46,8 +50,37 @@ scrollview>scrollbar.vertical {
 
 .files-header-fill {
     width: 1s;
-    height: 21px;
+    height: 22px;
     bottom: 1px;
+}
+
+.file-header-content {
+    col-between: 0px;
+}
+
+.file-header-content .svg-wrapper {
+    child-top: 0px;
+    child-left: 0px;
+    child-right: 0px;
+    bottom: 0px;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    height: auto;
+    border-width: 0px;
+}
+
+.svg-wrapper:hover {
+    background-color: #3f3f3f;
+}
+
+.svg-wrapper .svg {
+    color: #5b5b5b;
+}
+
+.svg-wrapper:hover .svg {
+    color: #fff;
 }
 
 .file-header {
@@ -60,6 +93,7 @@ scrollview>scrollbar.vertical {
     child-top: 0px;
     child-bottom: 0px;
     row-between: 1s;
+    col-between: 0px;
     height: 1s;
 }
 
@@ -107,9 +141,8 @@ scrollview>scrollbar.vertical {
 
 .window-menu-button {
     border-radius: 0px;
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 4px;
-    border-color: transparent;
     background-color: transparent;
     width: 1s;
     child-left: 16px;
@@ -117,8 +150,8 @@ scrollview>scrollbar.vertical {
 }
 
 .window-menu-button:hover {
-    background-color: #242424;
-    border-color: #3f3f3f;
+    background-color: #3f3f3f;
+    ;
 }
 
 .window-menu-button .window-menu-button-label {
