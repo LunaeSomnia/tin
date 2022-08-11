@@ -1,5 +1,6 @@
 mod app;
 mod file_editor;
+mod svg;
 mod window_menu;
 
 use app::AppState;
@@ -16,7 +17,7 @@ pub const BG_3: Color = Color::rgb(63, 63, 63);
 pub const BG_4: Color = Color::rgb(91, 91, 91);
 pub const BG_5: Color = Color::rgb(136, 136, 136);
 pub const BG_6: Color = Color::rgb(255, 255, 255);
-pub const ACCENT: Color = Color::rgb(36, 0, 255);
+pub const ACCENT: Color = Color::rgb(95, 151, 255);
 
 #[cfg(not(target_arch = "wasm32"))]
 fn main() {
