@@ -1,10 +1,11 @@
-pub const SVG_DOCUMENT: &[u8] = include_bytes!("../../static/svgs/Document.svg");
-pub const SVG_DOCUMENT_SMALL: &[u8] = include_bytes!("../../static/svgs/Document-small.svg");
-pub const SVG_FOLDER: &[u8] = include_bytes!("../../static/svgs/Folder.svg");
-pub const SVG_FOLDER_SMALL: &[u8] = include_bytes!("../../static/svgs/Folder-small.svg");
-pub const SVG_X: &[u8] = include_bytes!("../../static/svgs/X.svg");
-pub const SVG_X_SMALL: &[u8] = include_bytes!("../../static/svgs/X-small.svg");
+const SVG_DOCUMENT: &[u8] = include_bytes!("../../static/svgs/Document.svg");
+const SVG_DOCUMENT_SMALL: &[u8] = include_bytes!("../../static/svgs/Document-small.svg");
+const SVG_FOLDER: &[u8] = include_bytes!("../../static/svgs/Folder.svg");
+const SVG_FOLDER_SMALL: &[u8] = include_bytes!("../../static/svgs/Folder-small.svg");
+const SVG_X: &[u8] = include_bytes!("../../static/svgs/X.svg");
+const SVG_X_SMALL: &[u8] = include_bytes!("../../static/svgs/X-small.svg");
 
+#[allow(dead_code)]
 pub enum SvgIcon {
     Document,
     DocumentSmall,

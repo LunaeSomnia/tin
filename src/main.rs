@@ -23,7 +23,7 @@ pub const ACCENT: Color = Color::rgb(95, 151, 255);
 fn main() {
     use window_menu::WindowMenu;
 
-    use crate::file_editor::header::FileHeader;
+    use crate::{file_editor::FileHeader, svg::Svg};
 
     Application::new(|cx| {
         cx.add_stylesheet("static/styles.css")
@@ -71,10 +71,24 @@ fn main() {
                 .background_color(BG_0);
 
                 // sidebar
-                VStack::new(cx, |cx| {})
-                    .class("sidebar")
+                VStack::new(cx, |cx| {
+                    HStack::new(cx, |cx| {
+                        Svg::new(cx, svg::SvgIcon::Folder)
+                            .size(Units::Pixels(24.0))
+                            .hoverable(false);
+                    })
+                    .cursor(CursorIcon::Hand)
                     .background_color(BG_0)
-                    .width(Units::Pixels(32.0));
+                    .size(Units::Pixels(32.0))
+                    .class("svg-wrapper");
+
+                    HStack::new(cx, |_| {})
+                        .class("sidebar-fill")
+                        .background_color(BG_0);
+                })
+                .class("sidebar")
+                .background_color(BG_3)
+                .width(Units::Pixels(32.0));
             })
             .class("wrapper")
             .border_color(BG_3)

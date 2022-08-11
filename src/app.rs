@@ -5,7 +5,7 @@ use tinyfiledialogs::open_file_dialog;
 use vizia::prelude::*;
 use vizia::state::Model;
 
-use crate::file_editor::file::File;
+use crate::file_editor::File;
 
 #[derive(Lens)]
 pub struct AppState {

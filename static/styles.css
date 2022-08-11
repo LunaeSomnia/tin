@@ -41,6 +41,38 @@ scrollview>scrollbar.vertical {
     border-width: 1px;
 }
 
+/* Sidebar */
+
+.sidebar {
+    row-between: 1px;
+}
+
+.sidebar .svg-wrapper svg {
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+
+}
+
+.sidebar-fill {
+    height: 1s;
+    width: 1s;
+    bottom: 1px;
+}
+
+.sidebar .svg-wrapper svg {
+    color: rgb(136, 136, 136);
+}
+
+.sidebar .svg-wrapper:hover svg {
+    color: #888888;
+}
+
+.sidebar .svg-wrapper:hover svg.active {
+    color: #fff;
+}
+
 /* File Header */
 
 .files-header {
@@ -54,11 +86,11 @@ scrollview>scrollbar.vertical {
     bottom: 1px;
 }
 
-.file-header-content {
+.file-header .content {
     col-between: 0px;
 }
 
-.file-header-content .svg-wrapper {
+.file-header .content .svg-wrapper {
     child-top: 0px;
     child-left: 0px;
     child-right: 0px;
@@ -71,15 +103,15 @@ scrollview>scrollbar.vertical {
     border-width: 0px;
 }
 
-.svg-wrapper:hover {
+.file-header .content .svg-wrapper:hover {
     background-color: #3f3f3f;
 }
 
-.svg-wrapper .svg {
+.file-header .content .svg-wrapper .svg {
     color: #5b5b5b;
 }
 
-.svg-wrapper:hover .svg {
+.file-header .content .svg-wrapper:hover .svg {
     color: #fff;
 }
 
@@ -97,12 +129,12 @@ scrollview>scrollbar.vertical {
     height: 1s;
 }
 
-.file-header-colored {
+.file-header .colored-strip {
     height: 1px;
     width: 1s;
 }
 
-.file-name {
+.file-header .content .label {
     left: 8px;
     right: 8px;
     height: 1s;
@@ -129,17 +161,11 @@ scrollview>scrollbar.vertical {
 
 /* Window Menu */
 
-.window-menu {
+window-menu {
     height: 16px;
 }
 
-.window-menu .title-wrapper .title {
-    height: 16px;
-
-}
-
-
-.window-menu-button {
+window-dropdown-item {
     border-radius: 0px;
     border-width: 0px;
     border-radius: 4px;
@@ -149,27 +175,27 @@ scrollview>scrollbar.vertical {
     height: auto;
 }
 
-.window-menu-button:hover {
+window-dropdown-item:hover {
     background-color: #3f3f3f;
     ;
 }
 
-.window-menu-button .window-menu-button-label {
+window-dropdown-item label {
     color: #888;
 }
 
-.window-menu-button:hover .window-menu-button-label {
+window-dropdown-item:hover label {
     color: #fff;
 }
 
 /* Window Dropdown */
 
-.window-dropdown {
+window-dropdown {
     width: auto;
 
 }
 
-.window-dropdown-popup {
+popup {
     border-radius: 4px;
     width: 150px;
     child-left: 8px;
@@ -181,7 +207,7 @@ scrollview>scrollbar.vertical {
     border-width: 1px;
 }
 
-.title-wrapper {
+window-dropdown .label-wrapper {
     child-left: 8px;
     child-right: 8px;
 }

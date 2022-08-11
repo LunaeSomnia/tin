@@ -1,3 +1,5 @@
-pub mod editor;
-pub mod file;
-pub mod header;
+mod file;
+mod file_header;
+
+pub use file::File;
+pub use file_header::{FileHeader, FileHeaderEvent};

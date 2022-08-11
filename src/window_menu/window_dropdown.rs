@@ -1,11 +1,6 @@
-use std::sync::Arc;
+use vizia::{modifiers::Press, prelude::*};
 
-use vizia::{
-    modifiers::{Hover, Press},
-    prelude::*,
-};
-
-use crate::{BG_0, BG_1, BG_2, BG_3, BG_5, BG_6};
+use crate::*;
 
 pub struct WindowDropdown;
 
@@ -14,61 +9,67 @@ impl WindowDropdown {
     where
         F: 'static + Fn(&mut Context),
     {
-        Self {}
-            .build(cx, move |cx| {
-                PopupData::default().build(cx);
+        Self {}.build(cx, move |cx| {
+            PopupData::default().build(cx);
 
-                Binding::new(cx, PopupData::is_open, move |cx, is_open| {
-                    let is_open = is_open.get(cx);
-                    let label = HStack::new(cx, |cx| {
-                        let label = Label::new(cx, &label).color(BG_6).class("title");
-                        if !is_open {
-                            label.color(BG_5);
-                        }
-                    })
-                    .on_press(|cx| cx.emit(PopupEvent::Switch))
-                    .background_color(BG_0)
-                    .class("title-wrapper");
-                    if is_open {
-                        label.background_color(BG_1);
+            Binding::new(cx, PopupData::is_open, move |cx, is_open| {
+                let is_open = is_open.get(cx);
+
+                let label = HStack::new(cx, |cx| {
+                    let label = Label::new(cx, &label).color(BG_6).class("title");
+
+                    if !is_open {
+                        label.color(BG_5);
                     }
-                });
-
-                Popup::new(cx, PopupData::is_open, move |cx| {
-                    content(cx);
                 })
-                .on_blur(|cx| cx.emit(PopupEvent::Close))
-                .top(Percentage(100.0))
-                .height(Auto)
-                .border_color(BG_3)
-                .background_color(BG_2)
-                .class("window-dropdown-popup");
+                .on_press(|cx| cx.emit(PopupEvent::Switch))
+                .background_color(BG_0)
+                .class("label-wrapper");
+
+                if is_open {
+                    label.background_color(BG_1);
+                }
+            });
+
+            Popup::new(cx, PopupData::is_open, move |cx| {
+                content(cx);
             })
-            .class("window-dropdown")
-    }
-}
-
-impl View for WindowDropdown {}
-
-pub struct WindowDropdownItem;
-
-impl WindowDropdownItem {
-    pub fn new<M>(cx: &mut Context, label: String, event: M) -> Handle<Self>
-    where
-        M: Message + Clone,
-    {
-        Self {}.build(cx, |cx| {
-            Button::new(
-                cx,
-                move |ex| {
-                    ex.emit(PopupEvent::Close);
-                    ex.emit(event.clone());
-                },
-                |cx| Label::new(cx, &label).class("window-menu-button-label"),
-            )
-            .class("window-menu-button");
+            .on_blur(|cx| cx.emit(PopupEvent::Close))
+            .top(Percentage(100.0))
+            .height(Auto)
+            .border_color(BG_3)
+            .background_color(BG_2);
         })
     }
 }
 
-impl View for WindowDropdownItem {}
+impl View for WindowDropdown {
+    fn element(&self) -> Option<&'static str> {
+        Some("window-dropdown")
+    }
+}
+
+pub struct WindowDropdownItem;
+
+impl WindowDropdownItem {
+    pub fn new<M>(cx: &mut Context, label: String, event: M) -> Handle<Press<Self>>
+    where
+        M: Message + Clone,
+    {
+        Self {}
+            .build(cx, |cx| {
+                Label::new(cx, &label).hoverable(false);
+            })
+            .on_press(move |ex| {
+                ex.emit(PopupEvent::Close);
+                ex.emit(event.clone());
+            })
+            .hoverable(true)
+    }
+}
+
+impl View for WindowDropdownItem {
+    fn element(&self) -> Option<&'static str> {
+        Some("window-dropdown-item")
+    }
+}
