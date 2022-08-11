@@ -21,32 +21,12 @@ scrollbar>.thumb {
     background-color: #3f3f3f;
 }
 
-scrollview>.scroll_content {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    position-type: self-directed;
-}
-
-scrollview>scrollbar.horizontal {
-    left: 0px;
-    width: 1s;
-    right: 14px;
-
-    top: 1s;
-    height: 14px;
-    bottom: 0px;
-}
-
-scrollview>scrollbar.vertical {
-    top: 0px;
-    height: 1s;
-    bottom: 0px;
-
-    left: 1s;
-    width: 8px;
-    right: 0px;
+scrollbar.vertical {
+    width: 2px;
+    child-left: 0px;
+    child-right: 0px;
+    border-radius: 0px;
+    background-color: transparent;
 }
 
 
@@ -59,7 +39,7 @@ scrollview>scrollbar.vertical {
 /* File Header */
 
 .files-header {
-    height: 50px;
+    height: 22px;
 }
 
 .file-header {
@@ -72,6 +52,7 @@ scrollview>scrollbar.vertical {
     child-top: 0px;
     child-bottom: 0px;
     row-between: 1s;
+    height: 1s;
 }
 
 .file-header-colored {
